@@ -4,7 +4,7 @@ To initialize a Typescript-based Node.js project do the following:
 
 ```console
 $ docker build -t tsinit .
-$ docker run --rm -v /path/to/my/app:/usr/src/app tsinit
+$ docker run --rm -v /path/to/my/app:/usr/src/app tsinit my-app
 ```
 
 ## Inspiration

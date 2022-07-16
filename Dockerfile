@@ -9,5 +9,5 @@ WORKDIR /usr/src/app
 
 COPY entrypoint.sh /
 
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 

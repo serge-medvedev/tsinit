@@ -1,9 +1,11 @@
 #!/bin/bash
 
+PROJECT=${1:-app}
+
 set -euxo pipefail
 
 npm init -y > /dev/null
-jq '.main = "dist/index.js"' package.json | tee package.json.new
+jq --arg project "$PROJECT" '.main = "dist/index.js" | .name = $project' package.json | tee package.json.new
 mv package.json.new package.json
 npm install --save-dev typescript tslint
 mkdir -p src
