@@ -8,7 +8,7 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY entrypoint.sh /
+COPY tsinit.sh /
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/tsinit.sh"]
 
