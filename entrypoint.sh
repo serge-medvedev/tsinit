@@ -4,6 +4,10 @@ PROJECT=${1:-app}
 
 set -euxo pipefail
 
+#
+# Node.js project
+#
+
 npm init -y > /dev/null
 jq --arg project "$PROJECT" '.main = "dist/index.js" | .type = "module" | .name = $project' package.json | tee package.json.new
 mv package.json.new package.json
@@ -40,4 +44,14 @@ npm pkg set scripts.build="tsc"
 npm pkg set scripts.start="node dist/index.js"
 npm pkg set scripts.dev="nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
 npm pkg set scripts.lint="eslint .'"
+
+#
+# Git repo
+#
+
+cat << EOF > .gitignore
+node_modules/
+EOF
+
+git init --initial-branch=main
 
