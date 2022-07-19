@@ -74,6 +74,7 @@ EOF
 
 cat << EOF > .gitignore
 node_modules/
+dist/
 EOF
 
 git init --initial-branch=main
