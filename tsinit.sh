@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PROJECT=${1:-app}
-
 set -euxo pipefail
+
+PROJECT=${1:-app}
 
 #
 # Node.js project
